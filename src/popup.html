@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Web Highlighter</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="hero">
+        <p class="hero__eyebrow">Web Highlighter</p>
+        <h1>Your saved highlights</h1>
+        <p class="hero__subtitle">Everything stays local in your browser profile.</p>
+      </header>
+
+      <section class="controls">
+        <button type="button" id="open-sidebar" class="quick-action">Open Sidebar</button>
+        <div class="mode-switch" role="tablist" aria-label="Highlight scope">
+          <button type="button" class="mode-switch__button is-active" data-mode="all">All pages</button>
+          <button type="button" class="mode-switch__button" data-mode="current">This page</button>
+        </div>
+        <input
+          type="search"
+          id="search"
+          class="search"
+          placeholder='Search with tag:, site:, color:, note:, from:2026-03-01'
+        />
+        <p id="status" class="status" hidden></p>
+      </section>
+
+      <section class="stats" id="stats"></section>
+
+      <section class="exports">
+        <button type="button" data-export="json">Export JSON</button>
+        <button type="button" data-export="md">Export Markdown</button>
+        <button type="button" data-export="csv">Export CSV</button>
+        <button type="button" data-export="txt">Export Text</button>
+      </section>
+
+      <section class="list" id="results"></section>
+    </main>
+
+    <script src="shared.js"></script>
+    <script src="storage.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
